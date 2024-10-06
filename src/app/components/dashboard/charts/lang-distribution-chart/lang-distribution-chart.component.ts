@@ -12,18 +12,16 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
   styleUrls: ['./lang-distribution-chart.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CanvasJSAngularChartsModule], // Import CanvasJS module here
+  imports: [CanvasJSAngularChartsModule],
 })
 export class LangDistributionChartComponent {
   @Input() languageData: { [key: string]: number } = {};
 
-  // Define a color palette to match your cards
   private colorPalette = [
-    'rgb(4, 67, 66)', // Color for dataset name
-    'rgb(237, 158, 32)', // Color for number of instances
-    'rgb(126, 5, 5)', // Color for number of attributes
-    'rgb(105, 32, 251)', // Color for number of languages
-    // Add more colors as needed
+    'rgb(4, 67, 66)',
+    'rgb(237, 158, 32)',
+    'rgb(126, 5, 5)',
+    'rgb(105, 32, 251)',
   ];
 
   get chartOptions() {
@@ -40,13 +38,13 @@ export class LangDistributionChartComponent {
         title: "Languages",
       },
       data: [{
-        type: "column", // Change type if needed (bar, line, etc.)
-        indexLabel: "{y}", // Shows y value on all Data Points
+        type: "column",
+        indexLabel: "{y}",
         dataPoints: labels.map((label, index) => ({
           x: index,
           y: dataValues[index],
-          label: label, // Use language label
-          color: this.colorPalette[index % this.colorPalette.length], // Assign color from the palette
+          label: label,
+          color: this.colorPalette[index % this.colorPalette.length],
         })),
       }]
     };

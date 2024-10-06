@@ -1,9 +1,9 @@
 .page-title {
-  font-family: "Playfair Display", serif; /* Use Playfair Display for the title */
-  font-size: 2.5rem; /* Adjust the size as needed */
-  color: #010c13; /* Change the color to match your theme */
-  text-align: center; /* Center the title */
-  margin-bottom: 20px; /* Add some space below the title */
-  margin-top: 30px; /* Add some space below the title */
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #010c13;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 
 }

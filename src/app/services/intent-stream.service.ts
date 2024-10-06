@@ -1,6 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
-import {environment} from "../../environment";
+import { HttpClient } from '@angular/common/http';
+import { catchError, of } from 'rxjs';
+import { environment } from '../../environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import {environment} from "../../environment";
 export class IntentStreamService {
   private apiUrl = `${environment.apiUrl}/classify-intents/`; // Your API endpoint
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private http: HttpClient, private ngZone: NgZone) {}
 
   getIntentStream(): Observable<any> {
     return new Observable<any>(observer => {
@@ -35,5 +37,15 @@ export class IntentStreamService {
         eventSource.close();
       };
     });
+  }
+
+  stopStream(): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/stop-stream`, {})
+      .pipe(
+        catchError(err => {
+          console.error('Error stopping stream:', err);
+          return of(null); // Handle error gracefully
+        })
+      );
   }
 }

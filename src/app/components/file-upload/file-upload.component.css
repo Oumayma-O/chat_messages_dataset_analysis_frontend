@@ -1,42 +1,41 @@
 .upload-file-container {
-  display: flex; /* Use flexbox for horizontal alignment */
-  align-items: center; /* Center align items vertically */
+  display: flex;
+  align-items: center;
   margin-top: 20px;
-  padding: 20px; /* Padding for better spacing */
-  background-color: #f9f9f9; /* Light background for contrast */
-  border: 1px solid #ddd; /* Border for definition */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .upload-file-container input[type='file'] {
-  margin-right: 10px; /* Space between input and button */
-  padding: 10px; /* Padding for input */
-  font-size: 16px; /* Font size for readability */
-  border: 1px solid #bbb; /* Light border for input */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: border-color 0.3s; /* Smooth transition for border */
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s;
 }
 
-/* Change border color on focus */
 .upload-file-container input[type='file']:focus {
-  border-color: #113c60; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: #113c60;
+  outline: none;
 }
 
 .upload-file-container button {
-  padding: 10px 20px; /* Button padding */
-  font-size: 16px; /* Font size */
-  color: #fff; /* Text color */
-  background-color: #113c60; /* Button background */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #113c60;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .upload-file-container button:hover {
-  background-color: #0a2a40; /* Darker shade on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  background-color: #0a2a40;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

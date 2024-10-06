@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { CommonModule } from '@angular/common';
 

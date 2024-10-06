@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FileUploadService } from '../../services/file-upload.service';
-import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { NgIf } from "@angular/common";
 
 @Component({
@@ -8,7 +7,6 @@ import { NgIf } from "@angular/common";
   standalone: true,
   imports: [
     NgIf,
-    HttpClientModule
   ],
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css'],
@@ -17,7 +15,7 @@ export class FileUploadComponent {
   selectedFile: File | null = null;
   @Output() uploadSuccess = new EventEmitter<void>();
 
-  constructor(private http: HttpClient, private fileUploadService: FileUploadService) {} // Inject FileUploadService
+  constructor( private fileUploadService: FileUploadService) {}
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -39,7 +37,7 @@ export class FileUploadComponent {
       this.fileUploadService.uploadFile(this.selectedFile).subscribe({
         next: () => {
           console.log('File uploaded successfully!');
-          this.uploadSuccess.emit(); // Emit success event
+          this.uploadSuccess.emit();
         },
         error: (error) => {
           alert('Error uploading file: ' + error.message);

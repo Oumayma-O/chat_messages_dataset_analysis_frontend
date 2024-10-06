@@ -5,13 +5,11 @@ import {UploadOptionsComponent} from "./components/upload-options/upload-options
 import {DashboardService} from "./services/dashboard.service";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {CommonModule, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PageTitleComponent, UploadOptionsComponent, DashboardComponent, NgIf, CommonModule,
-    HttpClientModule],
+  imports: [RouterOutlet, PageTitleComponent, UploadOptionsComponent, DashboardComponent, NgIf, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

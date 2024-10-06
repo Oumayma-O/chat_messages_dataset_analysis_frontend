@@ -18,10 +18,6 @@ export class DashboardService {
     this.showDashboardSubject.next(true);
   }
 
-  hide() {
-    this.showDashboardSubject.next(false);
-  }
-
   fetchLanguageDistribution(): Observable<{ language_distribution: { [key: string]: number } }> {
     return this.http.get<{ language_distribution: { [key: string]: number } }>(`${environment.apiUrl}/language-distribution/`);
   }

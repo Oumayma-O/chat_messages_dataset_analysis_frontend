@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
 import { IntentStreamService } from '../../services/intent-stream.service';
 import { Subscription } from 'rxjs';
@@ -23,7 +23,7 @@ import {HttpClientModule} from "@angular/common/http";
     DatasetInfoRowComponent,
     LangDistributionChartComponent,
     IntentDistributionChartComponent,
-    HttpClientModule  // <-- Import HttpClientModule
+    HttpClientModule
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],

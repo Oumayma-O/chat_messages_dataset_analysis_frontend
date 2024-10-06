@@ -5,7 +5,6 @@
   margin: 20px;
 }
 
-/* Stream container */
 .stream-container {
   max-width: 600px;
   margin: 0 auto;
@@ -18,7 +17,6 @@
   scroll-behavior: smooth;
 }
 
-/* Buttons container */
 .buttons-container {
   display: flex;
   justify-content: center;
@@ -44,10 +42,9 @@
   background-color: #b8160c;
 }
 
-/* Stop stream active state */
 .stop-stream-button.active {
-  background-color: #6f0d09;  /* Darker color on activation */
-  transform: scale(0.98);      /* Slight scale-down effect */
+  background-color: #6f0d09;
+  transform: scale(0.98);
   transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
@@ -58,7 +55,6 @@
   margin-top: 20px;
 }
 
-/* Full width for intent stream */
 .intent-chart-container {
   display: flex;
   justify-content: space-between;

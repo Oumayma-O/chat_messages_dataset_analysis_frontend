@@ -1,6 +1,6 @@
 .dashboard {
   width: 100%;
-  min-height: 100vh; /* Ensure the dashboard takes the full vertical height */
+  min-height: 100vh;
   box-sizing: border-box;
   padding: 10px;
 }
@@ -8,14 +8,14 @@
 .lang-chart-container,
 .intent-chart-container,
 .chart-container {
-  display: flex; /* Enable flexbox for both containers */
-  flex-direction: row; /* Arrange children in a row */
-  justify-content: center; /* Space items evenly */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 10px 10px 0;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  align-items: stretch; /* Stretch children to the same height */
+  align-items: stretch;
 }
 
 
@@ -24,16 +24,16 @@ app-intent-distribution-chart{
 }
 
 .lang-chart-container > * {
-  flex: 1; /* Make sure both the chart and card grow equally */
+  flex: 1;
   margin: 0 5px;
 }
 
 .lang-chart-container > app-lang-distribution-chart {
-  flex-basis: 70%; /* Language chart takes 70% of the container */
+  flex-basis: 70%;
 }
 
 .lang-chart-container > app-card {
-  flex-basis: 30%; /* Null count card takes 30% of the container */
+  flex-basis: 30%;
 }
 
 .intent-chart-container > app-intent-distribution-chart {

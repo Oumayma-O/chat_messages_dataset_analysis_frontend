@@ -5,7 +5,6 @@ import {
 } from '@angular/core';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
-// Adjust the interface to match the API response
 export interface ToxicityDistribution {
   [key: string]: number;
 }
@@ -16,13 +15,12 @@ export interface ToxicityDistribution {
   styleUrls: ['./toxicity-distribution-chart.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CanvasJSAngularChartsModule], // Import CanvasJS module here
+  imports: [CanvasJSAngularChartsModule],
 
 })
 export class ToxicityDistributionChartComponent {
-  @Input() toxicityData: ToxicityDistribution = {}; // Initialize as an empty object
+  @Input() toxicityData: ToxicityDistribution = {};
 
-  // Define a color palette
   private colorPalette = [
     "#c82f0c", // Toxicity
     "#730c2c", // Severe Toxicity
@@ -33,19 +31,17 @@ export class ToxicityDistributionChartComponent {
     'rgb(105, 32, 251)', // Sexual Explicit
   ];
 
-  // Helper function to round values
   private roundValue(value: number): number {
     return value < 0.01 ? 0 : value;
   }
 
-  // Set the chart options based on toxicity data
   get chartOptions() {
     const labels = Object.keys(this.toxicityData);
-    const dataValues = Object.values(this.toxicityData).map(this.roundValue); // Apply rounding
+    const dataValues = Object.values(this.toxicityData).map(this.roundValue); // Apply rounding cuz most of the values are 0.00.
 
     return {
       animationEnabled: true,
-      theme: "dark2", // Dark mode theme
+      theme: "dark2",
       axisY: {
         includeZero: true,
         title: "Mean Value",
@@ -54,13 +50,13 @@ export class ToxicityDistributionChartComponent {
         title: "Toxicity Levels",
       },
       data: [{
-        type: "column", // Change type if needed (bar, line, etc.)
-        indexLabel: "{y}", // Shows y value on all Data Points
+        type: "column",
+        indexLabel: "{y}",
         dataPoints: labels.map((label, index) => ({
           x: index,
           y: dataValues[index],
-          label: label.charAt(0).toUpperCase() + label.slice(1).replace(/_/g, ' '), // Format label
-          color: this.colorPalette[index % this.colorPalette.length], // Assign color from the palette
+          label: label.charAt(0).toUpperCase() + label.slice(1).replace(/_/g, ' '),
+          color: this.colorPalette[index % this.colorPalette.length],
         })),
       }]
     };

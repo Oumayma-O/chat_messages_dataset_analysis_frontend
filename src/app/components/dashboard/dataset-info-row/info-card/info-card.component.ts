@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {NgStyle} from "@angular/common";

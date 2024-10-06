@@ -3,7 +3,7 @@ import { CanvasJSAngularChartsModule } from "@canvasjs/angular-charts";
 
 interface IntentData {
   label: string;
-  value: number; // Count of instances for the intent
+  value: number;
 }
 
 @Component({
@@ -16,16 +16,16 @@ interface IntentData {
 
 })
 export class IntentDistributionChartComponent implements OnInit, OnChanges {
-  @Input() intentData: { [key: string]: number } = {}; // Accepts data from the parent component
-  @Input() totalTexts: number = 0; // Total number of texts processed
-  chartOptions: any; // Chart options will be set in ngOnInit and updated in ngOnChanges
+  @Input() intentData: { [key: string]: number } = {};
+  @Input() totalTexts: number = 0;
+  chartOptions: any;
 
   private colorPalette: { [key: string]: string } = {
-    "Miscellaneous": 'rgb(4, 67, 66)', // Color for dataset name
-    "Translation": 'rgb(237, 158, 32)', // Color for number of instances
-    "Paraphrasing": 'rgb(126, 5, 5)', // Color for number of attributes
+    "Miscellaneous": 'rgb(4, 67, 66)',
+    "Translation": 'rgb(237, 158, 32)',
+    "Paraphrasing": 'rgb(126, 5, 5)',
     "Summarization": 'rgb(174,11,82)',
-    "Role-play": 'rgb(6,83,191)'// Color for number of languages
+    "Role-play": 'rgb(6,83,191)'
 
   }
 
@@ -37,34 +37,32 @@ export class IntentDistributionChartComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['intentData'] || changes['totalTexts']) {
-      this.updateChartOptions(); // Update the chart options whenever intentData or totalTexts changes
+      this.updateChartOptions();
     }
   }
 
   updateChartOptions() {
-    // Convert the intentData object to an array of IntentData
     const dataPoints: IntentData[] = Object.keys(this.intentData).map(key => ({
       label: key,
       value: this.intentData[key]
     }));
 
-    // Prepare data points for the chart
     const chartDataPoints = dataPoints.map((item, index) => ({
       name: item.label,
-      y: item.value, // Calculate percentage
-      color: this.colorPalette[item.label] // Default color if not found
+      y: item.value,
+      color: this.colorPalette[item.label]
     }));
 
     this.chartOptions = {
       animationEnabled: true,
       theme: "light2",
       data: [{
-        type: "pie", // Change type as needed (column, line, etc.)
+        type: "pie",
         indexLabel: "{name}: {y} instances",
         dataPoints: chartDataPoints
       }]
     };
 
-    console.log('Updated chart options:', this.chartOptions); // Check the updated chart options
+    console.log('Updated chart options:', this.chartOptions);
   }
 }
