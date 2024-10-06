@@ -22,13 +22,13 @@ export class ToxicityDistributionChartComponent {
   @Input() toxicityData: ToxicityDistribution = {};
 
   private colorPalette = [
-    "#c82f0c", // Toxicity
-    "#730c2c", // Severe Toxicity
-    "#0c62d1", // Obscene
-    'rgb(4, 67, 66)', // Color for dataset name
-    'rgb(237, 158, 32)', // Color for number of instances
-    'rgb(126, 5, 5)', // Color for number of attributes
-    'rgb(105, 32, 251)', // Sexual Explicit
+    'rgb(105, 32, 251)',
+    'rgb(126, 5, 5)',
+    'rgb(237, 158, 32)',
+    'rgb(4, 67, 66)',
+    "#c82f0c",
+    "#730c2c",
+    "#0c62d1",
   ];
 
   private roundValue(value: number): number {

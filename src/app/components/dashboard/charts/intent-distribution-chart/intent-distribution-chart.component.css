@@ -2,10 +2,18 @@
   font-family: "Playfair Display", serif;
   text-align: center;
   font-size: 24px;
-  background-color: white
+  background-color: white;
+  padding: 10px;
 }
 
 .indexLabel {
   font-family: "Montserrat", sans-serif;
   font-weight: 600; /* Use semi-bold for labels */
+}
+
+.chart-container {
+  background-color: white; /* Set background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 5px 5px 5px #939393;
+  transition: box-shadow 0.3s; /* Smooth transition effect */
 }

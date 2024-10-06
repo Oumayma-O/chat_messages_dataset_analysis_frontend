@@ -1,17 +1,15 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
 import { IntentStreamService } from '../../services/intent-stream.service';
-import { Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject, Observable } from 'rxjs';
 import { faClipboardList, faFileAlt, faLanguage, faTable } from '@fortawesome/free-solid-svg-icons';
-import {CardComponent} from "./card/card.component";
-import {
-  ToxicityDistributionChartComponent
-} from "./charts/toxicity-distribution-chart/toxicity-distribution-chart.component";
-import {IntentStreamComponent} from "./intent-stream/intent-stream.component";
-import {DatasetInfoRowComponent} from "./dataset-info-row/dataset-info-row.component";
-import {LangDistributionChartComponent} from "./charts/lang-distribution-chart/lang-distribution-chart.component";
-import {IntentDistributionChartComponent} from "./charts/intent-distribution-chart/intent-distribution-chart.component";
-import {HttpClientModule} from "@angular/common/http";
+import { CardComponent } from './card/card.component';
+import { ToxicityDistributionChartComponent } from './charts/toxicity-distribution-chart/toxicity-distribution-chart.component';
+import { IntentStreamComponent } from './intent-stream/intent-stream.component';
+import { DatasetInfoRowComponent } from './dataset-info-row/dataset-info-row.component';
+import { LangDistributionChartComponent } from './charts/lang-distribution-chart/lang-distribution-chart.component';
+import { IntentDistributionChartComponent } from './charts/intent-distribution-chart/intent-distribution-chart.component';
+import {AsyncPipe} from "@angular/common";
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
     DatasetInfoRowComponent,
     LangDistributionChartComponent,
     IntentDistributionChartComponent,
-    HttpClientModule
+    AsyncPipe,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
@@ -36,18 +34,19 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ToxicityNullCount: { count: number; percentage: number } | null = null;
 
   public currentData: any;
-  public distribution: any = {};
-  public subscription!: Subscription;
   public totalTexts = 0;
-  public streamStarted = false;
   public streamError = '';
+  private subscription!: Subscription;
+  public streamStarted = false;
+
+  private distributionSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
+  public distribution$: Observable<any> = this.distributionSubject.asObservable();
 
   datasetCards: { icon: any; topValue: string; bottomValue: string; color: string }[] = [];
 
   constructor(
     private dashboardService: DashboardService,
     private intentStreamService: IntentStreamService,
-    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -66,7 +65,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error fetching language distribution:', error);
-      }
+      },
     });
   }
 
@@ -102,7 +101,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error fetching dataset info:', error);
-      }
+      },
     });
   }
 
@@ -113,7 +112,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error fetching toxicity distribution:', error);
-      }
+      },
     });
   }
 
@@ -124,7 +123,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error fetching language null count:', error);
-      }
+      },
     });
   }
 
@@ -135,7 +134,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Error fetching toxicity null count:', error);
-      }
+      },
     });
   }
 
@@ -144,10 +143,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.subscription = this.intentStreamService.getIntentStream().subscribe({
       next: (data) => {
         this.currentData = data;
-        this.distribution = data.intent_distribution;
         this.totalTexts = data.total;
+        this.distributionSubject.next(data.intent_distribution); // Update distribution observable
         this.streamStarted = true;
-        this.cdr.detectChanges(); // Manually trigger change detection
       },
       error: (error) => {
         console.error('Error receiving stream:', error);
@@ -155,7 +153,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       complete: () => {
         console.log('Stream has been completed.');
-      }
+      },
     });
   }
 

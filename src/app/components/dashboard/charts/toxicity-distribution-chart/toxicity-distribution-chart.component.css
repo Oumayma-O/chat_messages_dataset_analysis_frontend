@@ -3,10 +3,18 @@
   text-align: center;
   font-size: 24px;
   color: #ffffff;
+  padding: 10px;
   background-color: #32373a
 }
 
 .indexLabel {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+}
+
+.chart-container {
+  background-color: white; /* Set background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 5px 5px 5px #939393;
+  transition: box-shadow 0.3s; /* Smooth transition effect */
 }

@@ -4,7 +4,7 @@
     <div class="info-container">
       <div class="info-item">
         <span class="info-label">Count of Null Values:</span>
-        <span class="info-value">{{ nullCount !== null ? nullCount : 'N/A' }}</span>
+        <span class="info-value">{{ nullCount !== null ? (nullCount| numberFormat) : 'N/A' }}</span>
       </div>
       <div class="info-item">
         <span class="info-label">Percentage of Null Values:</span>

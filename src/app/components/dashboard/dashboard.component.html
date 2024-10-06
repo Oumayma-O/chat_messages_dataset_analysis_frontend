@@ -14,11 +14,13 @@
   <div class="intent-chart-container" >
     <app-intent-stream
       [currentData]="currentData"
-      [distribution]="distribution"
+      [distribution]="distribution$ | async"
+      [streamStarted]="streamStarted"
       [totalTexts]="totalTexts"
-      [streamStarted]="streamStarted">
+
+    >
     </app-intent-stream>
-    <app-intent-distribution-chart [intentData]="distribution" [totalTexts]="totalTexts"></app-intent-distribution-chart>
+    <app-intent-distribution-chart [intentData]="distribution$ | async " ></app-intent-distribution-chart>
   </div>
 
 </div>

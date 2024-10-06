@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {NgStyle} from "@angular/common";
-import {NumberFormatPipe} from "../../../../number-format.pipe";
+import {NumberFormatPipe} from "../../../../pipes/number-format.pipe";
 
 @Component({
   selector: 'app-info-card',

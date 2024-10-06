@@ -1,11 +1,12 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {DecimalPipe, PercentPipe} from '@angular/common';
+import {NumberFormatPipe} from "../../../pipes/number-format.pipe";
 
 @Component({
   selector: 'app-card',
   standalone: true,
   imports: [
-    DecimalPipe, PercentPipe  ],
+    DecimalPipe, PercentPipe, NumberFormatPipe],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
