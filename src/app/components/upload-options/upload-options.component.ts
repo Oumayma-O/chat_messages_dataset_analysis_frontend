@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FileUploadComponent } from "../file-upload/file-upload.component";
+import { FileUploadComponent } from "./file-upload/file-upload.component";
 import { FileUploadService } from '../../services/file-upload.service';
 import { NgIf } from "@angular/common";
 import { DashboardService } from "../../services/dashboard.service";
