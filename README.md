@@ -37,4 +37,3 @@ Here are some screenshots showcasing the application in action:
 - **Modern UI** 🎨: Clean and responsive design, powered by Angular and CanvasJS.
 - **Customization** 🛠️: Tailor-made visualizations and settings.
 
----
