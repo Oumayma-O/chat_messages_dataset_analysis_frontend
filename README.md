@@ -38,12 +38,3 @@ Here are some screenshots showcasing the application in action:
 - **Customization** 🛠️: Tailor-made visualizations and settings.
 
 ---
-
-## 🛠️ Installation
-
-To get started with the project, follow these steps:
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/angular-chat-analysis.git
-
