@@ -1,0 +1,9 @@
+<div class="info-card" [ngStyle]="{'background-color': color}">
+  <div class="icon">
+    <fa-icon [icon]="icon"></fa-icon>
+  </div>
+  <div class="value">
+    <div class="top">{{ topValue | numberFormat }}</div>
+    <div class="bottom">{{ bottomValue }}</div>
+  </div>
+</div>

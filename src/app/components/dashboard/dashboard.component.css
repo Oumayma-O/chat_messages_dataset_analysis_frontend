@@ -1,0 +1,109 @@
+.dashboard {
+  width: 100%;
+  min-height: 100vh; /* Ensure the dashboard takes the full vertical height */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.lang-chart-container,
+.intent-chart-container,
+.chart-container {
+  display: flex; /* Enable flexbox for both containers */
+  flex-direction: row; /* Arrange children in a row */
+  justify-content: center; /* Space items evenly */
+  padding: 10px 10px 0;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: stretch; /* Stretch children to the same height */
+}
+
+
+app-intent-distribution-chart{
+  margin-top: 20px;
+}
+
+.lang-chart-container > * {
+  flex: 1; /* Make sure both the chart and card grow equally */
+  margin: 0 5px;
+}
+
+.lang-chart-container > app-lang-distribution-chart {
+  flex-basis: 70%; /* Language chart takes 70% of the container */
+}
+
+.lang-chart-container > app-card {
+  flex-basis: 30%; /* Null count card takes 30% of the container */
+}
+
+.intent-chart-container > app-intent-distribution-chart {
+  flex-basis: 50%;
+}
+
+.intent-chart-container > app-intent-stream {
+  flex-basis: 50%;
+}
+
+.chart-container > * {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.chart-container > app-toxicity-distribution-chart {
+  flex-basis: 70%;
+  min-height: 450px;
+  padding-bottom: 30px;
+}
+.chart-container > app-card {
+  flex-basis: 30%;
+}
+
+canvasjs-chart {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content {
+  height: 100%;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.info-label {
+  font-weight: bold;
+}
+
+.info-value {
+  color: #555;
+}

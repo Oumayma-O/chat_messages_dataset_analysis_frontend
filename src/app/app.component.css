@@ -1,0 +1,32 @@
+/* Container for the whole layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center;
+  padding: 10px;
+  max-width: 100%; /* Allow full width */
+  margin: 0 auto;
+}
+
+/* Page title styles */
+app-page-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%; /* Center text, but allow title to take full width */
+}
+
+/* Ensure the dashboard takes full width */
+app-dashboard {
+  width: 100%; /* Dashboard should fill the available width */
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* Align content inside */
+  /*border: 1px solid red; /* Debugging border */
+}
+
+

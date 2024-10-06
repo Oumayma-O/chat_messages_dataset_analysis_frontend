@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 20px;
+}
+
+/* Stream container */
+.stream-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stop-stream-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.stop-stream-button {
+  background-color: #971104;
+}
+
+.stop-stream-button:hover {
+  background-color: #b8160c;
+}
+
+/* Stop stream active state */
+.stop-stream-button.active {
+  background-color: #6f0d09;  /* Darker color on activation */
+  transform: scale(0.98);      /* Slight scale-down effect */
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Full width for intent stream */
+.intent-chart-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intent-chart-container > app-intent-stream,
+.intent-chart-container > app-intent-distribution-chart {
+  flex-basis: 50%;
+}

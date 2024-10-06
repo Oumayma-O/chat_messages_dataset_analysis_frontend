@@ -1,0 +1,86 @@
+.info-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 175px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid;
+  color: #fff;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #939393;
+  flex: 1 1 auto;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 60px;
+  margin-right: 20px;
+}
+
+.value {
+  text-align: center;
+  overflow: hidden;
+}
+
+.value .top {
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.value .bottom {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1600px) {
+  .info-card {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .info-card {
+    max-width: 275px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .info-card {
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .info-card {
+    max-width: 225px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto;
+  }
+
+  .icon {
+    margin-bottom: 10px;
+    font-size: 50px;
+  }
+
+  .value .top {
+    font-size: 20px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .value .bottom {
+    font-size: 16px;
+  }
+}

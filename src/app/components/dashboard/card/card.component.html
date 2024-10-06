@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-content">
+    <h2 class="card-title">{{ nullType || 'N/A' }}</h2>
+    <div class="info-container">
+      <div class="info-item">
+        <span class="info-label">Count of Null Values:</span>
+        <span class="info-value">{{ nullCount !== null ? nullCount : 'N/A' }}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Percentage of Null Values:</span>
+        <span class="info-value">{{ nullPercentage !== null ? (nullPercentage | percent:'1.2-2') : 'N/A' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

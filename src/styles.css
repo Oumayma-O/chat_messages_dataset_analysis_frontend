@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  background-color: #d8d8d8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif; /* Use Playfair Display for headings */
+}
+
+.chart-title {
+  font-family: "Playfair Display", serif; /* Use Playfair Display for chart titles */
+  text-align: center; /* Center align chart titles */
+}
+
+.indexLabel {
+  font-family: "Montserrat", sans-serif; /* Use Montserrat for index labels */
+}
+
+/* You can add global styles to this file, and also import other style files */

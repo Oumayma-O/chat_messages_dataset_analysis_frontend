@@ -1,0 +1,11 @@
+<div class="dataset-info-row">
+  <app-info-card
+    *ngFor="let card of datasetCards"
+    [icon]="card.icon"
+    [topValue]="card.topValue"
+    [bottomValue]="card.bottomValue"
+    [color]="card.color"
+    class="info-card"
+  >
+  </app-info-card>
+</div>

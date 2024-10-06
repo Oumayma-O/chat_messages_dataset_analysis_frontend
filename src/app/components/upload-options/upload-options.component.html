@@ -1,0 +1,8 @@
+<div class="file-upload-options" *ngIf="!showUpload">
+  <button (click)="onUploadClick()">Upload Dataset</button>
+  <button (click)="onDefaultClick()">Use Example Dataset</button>
+</div>
+
+<div *ngIf="showUpload">
+  <app-file-upload (uploadSuccess)="onUploadSuccess()"></app-file-upload>
+</div>

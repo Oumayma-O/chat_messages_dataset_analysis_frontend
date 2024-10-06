@@ -1,0 +1,26 @@
+<div *ngIf="streamStarted; else loading">
+  <div class="stream-container">
+    <h3>Intent Classification Stream</h3>
+    <div *ngIf="currentData">
+      <p><strong>Text:</strong> {{ currentData.text }}</p>
+      <p><strong>Intent:</strong> {{ currentData.intent }}</p>
+      <p><strong>Processed Count:</strong> {{ currentData.processed_count }} of {{ totalTexts }}</p>
+      <p><strong>Elapsed Time:</strong> {{ currentData.elapsed_time | number: '1.0-0' }} seconds</p>
+
+      <h4>Intent Distribution:</h4>
+      <ul>
+        <li *ngFor="let key of distribution | keyvalue">
+          {{ key.key }}: {{ key.value }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <button (click)="stopStream()" class="stop-stream-button">Stop Stream</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p class="loading-message">Loading stream data...</p>
+</ng-template>

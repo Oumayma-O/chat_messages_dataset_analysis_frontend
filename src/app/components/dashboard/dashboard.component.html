@@ -1,0 +1,24 @@
+<div class="dashboard">
+  <app-dataset-info-row [datasetCards]="datasetCards"></app-dataset-info-row>
+
+  <div class="lang-chart-container">
+    <app-lang-distribution-chart [languageData]="languageData"></app-lang-distribution-chart>
+    <app-card [nullCount]="LangNullCount?.count ?? null" [nullPercentage]="LangNullCount?.percentage ?? null" [nullType]="'Language Null Count'"></app-card>
+  </div>
+
+  <div class="chart-container">
+    <app-card [nullCount]="ToxicityNullCount?.count ?? null" [nullPercentage]="ToxicityNullCount?.percentage ?? null" [nullType]="'Toxicity Null Count'"></app-card>
+    <app-toxicity-distribution-chart [toxicityData]="toxicityData"></app-toxicity-distribution-chart>
+  </div>
+
+  <div class="intent-chart-container" >
+    <app-intent-stream
+      [currentData]="currentData"
+      [distribution]="distribution"
+      [totalTexts]="totalTexts"
+      [streamStarted]="streamStarted">
+    </app-intent-stream>
+    <app-intent-distribution-chart [intentData]="distribution" [totalTexts]="totalTexts"></app-intent-distribution-chart>
+  </div>
+
+</div>

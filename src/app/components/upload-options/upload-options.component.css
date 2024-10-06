@@ -1,0 +1,34 @@
+.file-upload-options {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.file-upload-options button {
+  margin: 0 15px; /* Increased margin for better spacing */
+  padding: 15px 30px; /* Increased padding for larger buttons */
+  font-size: 18px; /* Increased font size for better readability */
+  color: #fff;
+  background-color: #113c60;
+  border: none;
+  border-radius: 8px; /* Slightly larger border radius for rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s; /* Added transform transition */
+
+  /* Enhanced font */
+  font-family: 'Poppins', sans-serif; /* Consistent font usage */
+  font-weight: 400; /* Slightly bolder text for emphasis */
+
+  /* Box shadow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+}
+
+.file-upload-options button:hover {
+  background-color: #0a2a40;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.file-upload-options button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}
