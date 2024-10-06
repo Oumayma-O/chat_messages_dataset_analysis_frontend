@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {NgStyle} from "@angular/common";
@@ -13,7 +13,8 @@ import {NumberFormatPipe} from "../../../../number-format.pipe";
     NumberFormatPipe
   ],
   templateUrl: './info-card.component.html',
-  styleUrl: './info-card.component.css'
+  styleUrl: './info-card.component.css',
+
 })
 export class InfoCardComponent {
   @Input() icon!: IconDefinition;

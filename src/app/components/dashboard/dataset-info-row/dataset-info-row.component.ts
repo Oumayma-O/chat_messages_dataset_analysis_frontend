@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { CommonModule } from '@angular/common';
 
@@ -14,7 +14,8 @@ export interface DatasetCard {
   standalone: true,
   templateUrl: './dataset-info-row.component.html',
   imports: [InfoCardComponent, CommonModule],
-  styleUrls: ['./dataset-info-row.component.css']
+  styleUrls: ['./dataset-info-row.component.css'],
+
 })
 export class DatasetInfoRowComponent  {
   @Input() datasetCards: DatasetCard[] = [];

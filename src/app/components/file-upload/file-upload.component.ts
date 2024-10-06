@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {environment} from "../../../environment";
@@ -11,7 +11,7 @@ import {environment} from "../../../environment";
     HttpClientModule
   ],
   templateUrl: './file-upload.component.html',
-  styleUrl: './file-upload.component.css'
+  styleUrl: './file-upload.component.css',
 })
 export class FileUploadComponent {
   selectedFile: File | null = null;

@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DatasetInfoRowComponent } from "./dataset-info-row/dataset-info-row.component";
 import { LangDistributionChartComponent } from "./charts/lang-distribution-chart/lang-distribution-chart.component";
@@ -23,7 +23,7 @@ import {faClipboardList, faFileAlt, faLanguage, faTable} from "@fortawesome/free
     IntentStreamComponent
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit , OnDestroy {
   languageData: { [key: string]: number } = {};

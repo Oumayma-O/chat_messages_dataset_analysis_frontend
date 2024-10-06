@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 import { FileUploadComponent } from "../file-upload/file-upload.component";
 import { NgIf } from "@angular/common";
 import {HttpClient, HttpClientModule} from '@angular/common/http';

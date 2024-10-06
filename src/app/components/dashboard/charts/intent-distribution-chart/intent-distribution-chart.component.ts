@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import {Component, Input, OnInit, OnChanges, SimpleChanges, ChangeDetectionStrategy} from '@angular/core';
 import { CanvasJSAngularChartsModule } from "@canvasjs/angular-charts";
 
 interface IntentData {
@@ -11,7 +11,9 @@ interface IntentData {
   standalone: true,
   imports: [CanvasJSAngularChartsModule],
   templateUrl: './intent-distribution-chart.component.html',
-  styleUrls: ['./intent-distribution-chart.component.css']
+  styleUrls: ['./intent-distribution-chart.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class IntentDistributionChartComponent implements OnInit, OnChanges {
   @Input() intentData: { [key: string]: number } = {}; // Accepts data from the parent component

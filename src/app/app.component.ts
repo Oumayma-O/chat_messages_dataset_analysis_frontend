@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {PageTitleComponent} from "./components/page-title/page-title.component";
 import {UploadOptionsComponent} from "./components/upload-options/upload-options.component";
@@ -13,7 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [RouterOutlet, PageTitleComponent, UploadOptionsComponent, DashboardComponent, NgIf, CommonModule,
     HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   showDashboard = false;

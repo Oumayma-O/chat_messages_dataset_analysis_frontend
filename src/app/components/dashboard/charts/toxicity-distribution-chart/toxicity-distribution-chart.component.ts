@@ -17,6 +17,7 @@ export interface ToxicityDistribution {
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [CanvasJSAngularChartsModule], // Import CanvasJS module here
+
 })
 export class ToxicityDistributionChartComponent {
   @Input() toxicityData: ToxicityDistribution = {}; // Initialize as an empty object

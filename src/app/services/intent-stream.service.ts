@@ -1,11 +1,12 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
+import {environment} from "../../environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class IntentStreamService {
-  private apiUrl = 'http://localhost:8000/classify-intents/'; // Your API endpoint
+  private apiUrl = `${environment.apiUrl}/classify-intents/`; // Your API endpoint
 
   constructor(private ngZone: NgZone) {}
 

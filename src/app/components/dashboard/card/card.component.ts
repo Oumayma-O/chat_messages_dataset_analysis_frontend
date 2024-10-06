@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import {DecimalPipe, PercentPipe} from '@angular/common';
 
@@ -8,7 +8,8 @@ import {DecimalPipe, PercentPipe} from '@angular/common';
   imports: [
     DecimalPipe, PercentPipe  ],
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'] // Fixed styleUrls from styleUrl
+  styleUrls: ['./card.component.css'], // Fixed styleUrls from styleUrl
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
   @Input() nullCount: number | null = null; // Number of null values
