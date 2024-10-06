@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FileUploadComponent } from "../file-upload/file-upload.component";
+import { FileUploadService } from '../../services/file-upload.service';
 import { NgIf } from "@angular/common";
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DashboardService } from "../../services/dashboard.service";
-import {environment} from "../../../environment";
 
 @Component({
   selector: 'app-upload-options',
@@ -20,16 +20,15 @@ export class UploadOptionsComponent {
   showUpload = false;
   @Output() datasetSelected = new EventEmitter<string>();
 
-  constructor(private dashboardService: DashboardService, private http: HttpClient) {} // Inject HttpClient
+  constructor(private http: HttpClient, private fileUploadService: FileUploadService, private dashboardService: DashboardService) {}
 
-  // Method to emit the selected option
   onUploadClick() {
     this.showUpload = true; // Show the upload component
   }
 
   onDefaultClick() {
     console.log('Using default dataset...');
-    this.http.get(`${environment.apiUrl}/use-default-dataset/`).subscribe({
+    this.fileUploadService.useDefaultDataset().subscribe({
       next: () => {
         this.dashboardService.show(); // Show the dashboard after loading the default dataset
       },
@@ -37,9 +36,7 @@ export class UploadOptionsComponent {
         alert('Error loading default dataset: ' + error.message);
       },
     });
-
   }
-
 
   onUploadSuccess(): void {
     console.log('File uploaded successfully!');
