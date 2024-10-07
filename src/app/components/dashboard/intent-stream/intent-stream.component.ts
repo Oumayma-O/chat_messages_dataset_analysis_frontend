@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { DecimalPipe, KeyValuePipe, NgForOf, NgIf } from "@angular/common";
 import {IntentStreamService} from "../../../services/intent-stream.service";
 
@@ -12,7 +12,8 @@ import {IntentStreamService} from "../../../services/intent-stream.service";
     KeyValuePipe,
     DecimalPipe
   ],
-  styleUrls: ['./intent-stream.component.css']
+  styleUrls: ['./intent-stream.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IntentStreamComponent {
   @Input() currentData: any;  // Data received from the Dashboard

@@ -29,6 +29,14 @@ Here are some screenshots showcasing the application in action:
 </div>
 
 ---
+## 🧩 Components Overview
+
+<div style="text-align: center;">
+    <img src="images/components.png" alt="Components Hierarchy" style="width: 80%; margin: 10px auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+    <p><em>Components Hierarchy </em></p>
+</div>
+
+---
 
 ## 🚀 Features
 
